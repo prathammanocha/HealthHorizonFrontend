@@ -13,9 +13,20 @@ const Auth = () => {
       <Stack.Screen
         name="LoginScreen"
         component={LoginScreen}
-        options={{headerShown: false}}
+        options={{
+          title: 'Got an account already? Sign In', //Set Header Title
+          headerStyle: {
+            backgroundColor: '',
+            borderColor: "black",
+            borderWidth: 1 //Set Header color
+          },
+          headerTintColor: 'black', //Set Header text color
+          headerTitleStyle: {
+            fontWeight: '500', //Set Header text style
+          },
+        }}
       />
-      <Stack.Screen
+      {/* <Stack.Screen
         name="RegisterScreen"
         component={RegisterScreen}
         options={{
@@ -28,7 +39,7 @@ const Auth = () => {
             fontWeight: 'bold', //Set Header text style
           },
         }}
-      />
+      /> */}
     </Stack.Navigator>
   );
 };

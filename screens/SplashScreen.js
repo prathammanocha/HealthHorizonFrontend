@@ -6,7 +6,7 @@ import {
   Image
 } from 'react-native';
 
-import AsyncStorage from '@react-native-community/async-storage';
+// import AsyncStorage from '@react-native-community/async-storage';
 
 const SplashScreen = ({navigation}) => {
   //State for ActivityIndicator animation
@@ -18,12 +18,13 @@ const SplashScreen = ({navigation}) => {
       //Check if user_id is set or not
       //If not then send for Authentication
       //else send to Home Screen
-      AsyncStorage.getItem('user_id').then((value) =>
-        navigation.replace(
-          value === null ? 'Auth' : 'DrawerNavigationRoutes'
-        ),
-      );
-    }, 5000);
+      // AsyncStorage.getItem('user_id').then((value) =>
+      //   navigation.replace(
+      //     value === null ? 'Auth' : 'DrawerNavigationRoutes'
+      //   ),
+      // );
+      navigation.replace('Auth');
+    }, 3000);
   }, []);
 
   return (
@@ -34,7 +35,7 @@ const SplashScreen = ({navigation}) => {
       />
       <ActivityIndicator
         animating={animating}
-        color="#FFFFFF"
+        color="black"
         size="large"
         style={styles.activityIndicator}
       />
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#307ecc',
+    backgroundColor: '#FFFFFF',
   },
   activityIndicator: {
     alignItems: 'center',
